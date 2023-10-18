@@ -4,7 +4,7 @@ info:
   description: This API returns the result of last purchases.
   version: 1.0.0
 servers:
-- url: https://compras-api-yykwvlrz3q-uc.a.run.app/testeoas
+- url: https://compras-api-yykwvlrz3q-uc.a.run.app/demo-cicd
 paths:
   /last-purchases:
     get:
