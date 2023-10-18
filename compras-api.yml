@@ -1,0 +1,113 @@
+openapi: 3.0.1
+info:
+  title: Order API
+  description: This API allows you to manage orders.
+  version: 1.0.0
+servers:
+- url: https://compras-api-yykwvlrz3q-uc.a.run.app/
+paths:
+  /orders:
+    get:
+      summary: List orders
+      description: This operation lists all orders.
+      responses:
+        200:
+          description: A list of orders.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+    post:
+      summary: Create an order
+      description: This operation creates a new order.
+      requestBody:
+        description: The order to create.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+        required: false
+      responses:
+        201:
+          description: The created order.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+      x-codegen-request-body-name: order
+  /orders/{orderId}:
+    get:
+      summary: Get an order
+      description: This operation gets an order by ID.
+      parameters:
+      - name: orderId
+        in: path
+        description: The ID of the order to get.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: The order.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+    put:
+      summary: Update an order
+      description: This operation updates an order.
+      parameters:
+      - name: orderId
+        in: path
+        description: The ID of the order to update.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: The order to update.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+        required: false
+      responses:
+        200:
+          description: The updated order.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+      x-codegen-request-body-name: order
+    delete:
+      summary: Delete an order
+      description: This operation deletes an order.
+      parameters:
+      - name: orderId
+        in: path
+        description: The ID of the order to delete.
+        required: true
+        schema:
+          type: string
+      responses:
+        204:
+          description: The order was deleted.
+          content: {}
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        Ano:
+          type: string
+        Cliente:
+          type: string
+        CPF:
+          type: string
+        id:
+          type: integer
+        mes:
+          type: string
+        valor:
+          type: string
