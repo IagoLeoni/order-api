@@ -27,12 +27,6 @@ paths:
                   $ref: '#/components/schemas/LastPurchases'
                 type: array
           description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-          description: Bad Request
       summary: Returns the result of last purchases.
       tags:
         - last-purchases
