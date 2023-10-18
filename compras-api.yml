@@ -1,10 +1,10 @@
-openapi: 3.0.0
+openapi: 3.0.1
 info:
   title: Compras API
   description: This API returns the result of last purchases.
   version: 1.0.0
 servers:
-- url: https://compras-api-yykwvlrz3q-uc.a.run.app/
+- url: https://compras-api-yykwvlrz3q-uc.a.run.app
 paths:
   /ultimas-compras:
     get:
