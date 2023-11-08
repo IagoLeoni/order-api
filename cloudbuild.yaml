@@ -9,5 +9,5 @@ steps:
       apigeecli prefs set --nocheck=true -o apigee-prd1
       apigeecli token cache --metadata-token
 
-      # openapi deployment
+      # openapi deployment #2
       apigeecli apis create openapi  -f compras-api.yml  -n demo-cicd-apigee
